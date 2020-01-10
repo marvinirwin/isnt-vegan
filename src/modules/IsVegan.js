@@ -12,7 +12,7 @@ export function isVeganIngredient (ingredientToCheck) {
 
   const formattedIngredientToCheck = ingredientToCheck.trim().toLowerCase();
 
-  return !nonVeganList.includes(formattedIngredientToCheck);
+  return nonVeganList.includes(formattedIngredientToCheck);
 }
 
 /**
@@ -22,7 +22,7 @@ export function isVeganIngredient (ingredientToCheck) {
  * @return <code>true</code> if ingredients are not in nonVeganList
  */
 export function isVeganIngredientList (ingredientsToCheck) {
-  return !ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
+  return ingredientsToCheck.some(ingredient => !isVeganIngredient(ingredient));
 }
 
 /**
